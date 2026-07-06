@@ -1,4 +1,5 @@
 
+
 # Real-Time-Self-Sensing-SMA-Bending-Wire
 
 An end-to-end multi-rate calibration framework and closed-loop thermal observer for Shape Memory Alloy (SMA) bending wire actuators, built using MATLAB and Simulink.
@@ -19,8 +20,8 @@ The repository is structured sequentially to move from raw multi-rate data to ro
 * **`Step_1_Observer_Calibration_Experiment.slx`**: Runs the uncalibrated observer model under zero external load to generate high-frequency 1ms electrical readings against sparse 230ms thermocouple benchmarks.
 
 ### 2. Hysteresis Characterization
-* **`Step_3_FORC_Extraction_Model.slx`**: Executes tracking challenges to generate multi-loop reversal data across deliberate temperature calculation offsets and mechanical loads.
-* **`Step_4_FORC_Initialization.m`**: Builds the primary material trajectory constraints and initializes baseline tracking limits.
+* **`Step_3_FORC_Extraction_Model.slx`**: Model configuration template for extracting custom multi-loop dynamic reversal maps.
+* **`Step_4_FORC_Initialization.m`**: Loads the pre-compiled trajectory datasets to configure material parameters and establish baseline structural tracking limits.
 * **`Step_4_FORC_Visualization.m`**: Plots First-Order Reversal Curves (FORC) to expose data gaps and evaluate structural hysteresis behavior.
 
 ### 3. Feedforward Control & Verification
@@ -28,9 +29,14 @@ The repository is structured sequentially to move from raw multi-rate data to ro
 * **`Step_6_Robustness_Analysis.slx`**: The final closed-loop controller testing framework evaluating system resilience across variable loads and supply voltage levels (2V, 4.5V, and 6V).
 
 ### 4. Calibration & Dataset Assets
-* Contains the core mathematical data arrays (`alpha_values.mat`, `beta_values.mat`, `valid_idx.mat`) along with mapped structural matrix boundaries (`forc_matrix.mat`, `raw_forc_data.mat`, `sma_pure_1d_switching.mat`) to initialize the observer.
+* **`raw_forc_data.mat`**: Provides pre-collected, raw experimental coordinate points from the First-Order Reversal Curve data. This file is pre-loaded to save testers approximately 4 hours of local compilation and execution time.
+* **`alpha_values.mat`**, **`beta_values.mat`**, **`forc_matrix.mat`**, **`valid_idx.mat`**: Mapped structural arrays and index masks dependencies required strictly by `Step_4_FORC_Visualization.m` to generate the complete hysteresis curve profiles.
 
 ---
+
+## 💡 Crucial Hint:
+
+The First-Order Reversal Curve (FORC) execution in Simulink (`Step_3`) is highly demanding and requires roughly **4 hours of hardware runtime** to gather consecutively minor temperature tracking loops. To save validation time, **do not run Step 3**. Instead, execute `Step_4_FORC_Initialization.m` directly. This script instantly unpacks the pre-loaded `raw_forc_data.mat` array and fully prepares your workspace environment variables for the downstream visualization and control steps.
 
 ## ⚠️ Thermal Observer Tracking Constraints Note
 
