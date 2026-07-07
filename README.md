@@ -11,6 +11,7 @@ Highly sensitive Shape Memory Alloy (SMA) actuators undergo material phase trans
 However, standard physical thermocouples suffer from an inherent **230ms response delay**. This massive latency introduces severe measurement lag, creating huge errors that critically degrade control over key physical outputs like curvature, strain, and angular position. 
 
 This project solves this problem by bypassing physical thermocouples entirely during active control. It establishes a real-time **self-sensing methodology** that utilizes a fast current sensor (**1ms response time**). By continuously monitoring the dynamic electrical resistance changes that occur across the material's phases on the fly, the system calculates the active martensite volume fraction and estimates wire temperature in real time. 
+
 ![Uploading AdobeExpressPhotos_b93aa564f58246c39b7ffe1eb389d595_CopyEdited.png…]()
 
 
