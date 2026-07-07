@@ -13,9 +13,11 @@ This project solves this problem by bypassing physical thermocouples entirely du
 ![SMA Self-Sensing System Architecture](System.png)
 *Figure 1: Full hybrid feedback-feedforward controller robustness testing block diagram. The framework evaluates system resilience when the inner loop operates under faulty conditions with slightly errored feedback estimated temperatures. It incorporates sparse FORC extracted lookup tables to verify overall tracking stability.*
 
+
 ### 📊 Simulation Tracking Results at Baseline
 ![Robustness Analysis Results](TheOutputresultsAtbaseline.png)
-*Figure 2: Time-domain response under closed-loop evaluation displaying the System Input Signal (InputC), tracked output curvature errors, and optimized high-contrast thermal profile bound within a 400°C ceiling scale.*
+*Figure 2: Time-domain response under closed-loop evaluation displaying the System Input Signal (InputC), tracked output curvature errors, and optimized high-contrast thermal profile bound within a 400°C ceiling scale. Note that this baseline simulation is evaluated under the exact constant load condition used during the First-Order Reversal Curve (FORC) data extraction sequence.*
+
 
 ---
 
