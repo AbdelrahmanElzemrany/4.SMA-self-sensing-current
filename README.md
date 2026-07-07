@@ -10,7 +10,7 @@ However, standard physical thermocouples suffer from an inherent **230ms respons
 
 This project solves this problem by bypassing physical thermocouples entirely during active control. It establishes a real-time **self-sensing methodology** that utilizes a fast current sensor (**1ms response time**). By continuously monitoring the dynamic electrical resistance changes that occur across the material's phases on the fly, the system calculates the active martensite volume fraction and estimates wire temperature in real time. 
 ### 🎛️ System Architecture
-![SMA Self-Sensing System Architecture](System.png)
+![SMA Self-Sensing System Architecture](Baseline.png)
 *Figure 1: Full hybrid feedback-feedforward controller robustness testing block diagram. The framework evaluates system resilience when the inner loop operates under faulty conditions with slightly errored feedback estimated temperatures. It incorporates sparse FORC extracted lookup tables to verify overall tracking stability.*
 
 
